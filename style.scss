@@ -1,0 +1,176 @@
+@import "normalize";
+
+$black: #222;
+$white: #ecf0f1;
+$grey: rgb(155, 155, 155);
+$link: blue;
+$text: #fff;
+
+$baseFont: 'Montserrat', sans-serif;
+$headerFont: 'Montserrat', sans-serif;
+$serifFont: Times, serif;
+$fontSize: 18px;
+
+
+	a {
+		color: $link;
+		&:hover {
+		color: darken($link, 10);
+		}
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		color: lavender;
+		font-family: $headerFont;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+
+	h1 {
+		font-size: $fontSize *4;
+		// font-size: 56px;
+	}
+
+	h2 {
+		font-size: $fontSize * 1.5;
+	}
+
+	h3 {
+		font-size: $fontSize * 1;
+		// font-size: 36px;
+	}
+	
+	body {
+		background-color: #ecf0f1;
+		padding-top: 0;
+	}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+	.container {
+		text-align: center;
+	}
+		.header {
+			height: 43vh;
+			position: relative;
+			.asciiTitle {
+				pre {
+					text-align: center;
+					font-size: 7pt;
+				}
+			}
+		}
+
+	.bottom {
+		.flexContainer {
+			width: 95%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			position: relative;
+			.flexItem {
+				transform: scale(0.6);
+			    margin: auto;
+			    transition: transform 0.2s;
+			    display: block;
+			}
+
+			.flexSpace {
+				width: 30px;
+				height: 30px;
+				margin: auto;
+			}
+		}
+		.popContainer {
+			position: absolute;
+			.popItem{
+				z-index: 99;
+			}
+		}
+	}
+
+	.footer {
+		p {
+			text-align: center;
+			color: purple;
+		}
+	}
+
+/*HOVER STATES*/
+	.bottom {
+		.flexContainer {
+			.flexItem:hover {
+				transform: scale(1);
+			}
+		}
+	}
+
+// MEDIA QUERIES
+	@media (max-width: 1240px){
+		.header {
+			height: 30vh;
+			.asciiTitle {
+				pre {
+					font-size: 5pt;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		// IPAD
+		.bottom {
+			.flexContainer {
+				flex-direction: column;
+				flex-wrap: wrap;
+				.flexItem {
+					transform: scale(1);
+					margin-top: 40px;
+				}	
+			}
+		}
+
+		.flexSpace {
+			display: none;
+		}
+	}
+
+	@media (max-width: 575px) {
+		.header {
+			height: 25vh;
+			.asciiTitle {
+				padding-top: 20px;
+				pre {
+					font-size: 3.5pt;
+				}
+			}
+		}
+		.bottom {
+			.flexContainer {
+				flex-direction: column;
+				flex-wrap: wrap;
+				.flexItem {
+					transform: scale(none);
+					margin-top: 20px;
+					img {
+					    max-width: 100%;
+					    height: auto;
+					    width: auto\9; /* ie8 */
+					}
+				}	
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+	// 
+		.header {
+			height: 25vh;
+		}
+	}
+
+	@media (max-width: 376px) {
+	// iPhone 6
+
+	}
